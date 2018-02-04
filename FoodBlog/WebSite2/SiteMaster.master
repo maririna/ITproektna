@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+   
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        #uppPhoto {
+             background-image: url(img/d_muesli.jpeg) !important;
+             background-repeat: no-repeat;
+             background-origin:padding-box;
+             /*position:fixed;*/
+             background-attachment:fixed;
+             width: 100%;
+             height: 60vh;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+<form id="f1" runat="server">
+
+<!-- navigation  -->
+<nav style="position:fixed; background-color:white; height:60px; width: 100%; z-index:1 "  class="navbar navbar-expand-md navbar-light bg-faded " >
+  <a class="navbar-brand" href="vegetarian.aspx">
+    <!--<img src="img/logo1.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
+   Simply Vegetarian
+  </a>
+
+  <ul class="navbar-nav">
+     <li class="nav-item">
+      <a class="nav-link" href="vegetarian.aspx">Vegetarian</a>
+   </li>
+      <li class="nav-item">
+      <a class="nav-link" href="vegan.aspx">Vegan</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="desserts.aspx">Desserts</a>
+   </li>
+     
+
+  </ul>
+   <ul class="navbar-nav ml-md-auto">
+      <li class="nav-item">
+        <asp:HyperLink ID="hlLogin" runat="server" CssClass="nav-link" href="login.aspx"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>Sign in</asp:HyperLink>
+      </li>
+    <li class="nav-item">
+     <asp:HyperLink ID="hlRegister" runat="server" CssClass="nav-link" href="register.aspx"><i class="fa fa-bars fa-fw" aria-hidden="true"></i>Register</asp:HyperLink>
+     </li>
+    </ul>
+
+    <ul class="navbar-nav ml-md-auto" style="position:fixed; right:5px">
+    <li class="nav-item">
+    <asp:LinkButton ID="lbFav" runat="server" OnClick="lbFav_Click" CssClass="nav-link"><i class="fa " aria-hidden="true"></i>My recipes</asp:LinkButton>
+     </li>
+    <li class="nav-item">
+    <asp:LinkButton ID="lbSignOut" runat="server" OnClick="lbSignOut_Click" CssClass="nav-link"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</asp:LinkButton>
+    </li>
+    </ul>
+
+</nav>
+<div id="uppPhoto"> </div> 
+     <div class="container">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+      </div>
+ </form>  
+  <footer CssClass="modal-footer" style="position:relative; bottom:0; padding:1%; height:50px; text-align:center; border-top:solid 1px lightgrey; color:dimgray">
+      <p>
+      Simply vegetarian. Website built for the IT subject. 151246 && 151068
+          </p>
+  </footer>
+    
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+</html>
